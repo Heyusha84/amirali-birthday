@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    background: #05080d;
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 16px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 280px;
+    height: 280px;
+    background: #008cff;
+    filter: blur(150px);
+    opacity: .16;
+    top: -100px;
+    right: -100px;
+    pointer-events: none;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 250px;
+    height: 250px;
+    background: #008cff;
+    filter: blur(150px);
+    opacity: .18;
+    bottom: -100px;
+    left: -100px;
+    pointer-events: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 430px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 35px 22px;
+    border: 1px solid rgba(0, 162, 255, 0.35);
+    border-radius: 28px;
+    background: rgba(12,18,25,.88);
+    box-shadow: 0 0 35px rgba(0,255,136,.12);
+    animation: appear 1.2s ease;
+}
+
+@keyframes appear {
+    from {opacity:0; transform:translateY(25px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+.top {
+    color: #0099ff;
+    letter-spacing: 4px;
+    font-size: 11px;
+    margin-bottom: 28px;
+    text-shadow: 0 0 12px #0077ff;
+}
+
+h1 {
+    font-size: 34px;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 12px #0044ff,
+                 0 0 30px rgba(0, 89, 255, 0.5);
+    margin-bottom: 14px;
+}
+
+.heart {
+    font-size: 42px;
+    margin: 15px 0;
+    animation: beat 1.3s infinite;
+}
+
+@keyframes beat {
+    50% {transform:scale(1.2);}
+}
+
+.subtitle {
+    color: #0ae276;
+    font-size: 15px;
+    line-height: 2.2;
+    margin: 15px 0 25px;
+}
+
+.message {
+    font-size: 14px;
+    line-height: 2.5;
+    color: #d7e2eb;
+    background: rgba(0,255,136,.05);
+    border: 1px solid rgba(0,255,136,.18);
+    padding: 20px 15px;
+    border-radius: 18px;
+    margin: 20px 0;
+}
+
+.message span {
+    color: #00ff88;
+    font-weight: bold;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    color: #00150c;
+    background: linear-gradient(100deg,#00ff88,#0400ff);
+    box-shadow: 0 0 20px rgba(0,255,136,.3);
+    transition: .3s;
+}
+
+button:active {
+    transform: scale(.94);
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #8c9ba8;
+}
+
+.footer strong {
+    color: #00ff88;
+}
+
+.stars {
+    position: fixed;
+    color: #00f7ff;
+    opacity: .6;
+    animation: float 5s infinite ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes float {
+    50% {transform:translateY(-25px); opacity:1;}
+}
+
+#surprise {
+    display: none;
+    color: #00ff88;
+    margin-top: 20px;
+    line-height: 2.3;
+    animation: appear .8s;
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars" style="top:10%;left:10%">✦</div>
+<div class="stars" style="top:30%;right:8%">✧</div>
+<div class="stars" style="bottom:15%;right:15%">✦</div>
+<div class="stars" style="bottom:30%;left:8%">✧</div>
+
+<div class="container">
+
+    <div class="top">A SPECIAL DAY FOR SOMEONE SPECIAL</div>
+
+    <h1>تولدت مبارک عشقم</h1>
+
+    <div class="heart">💚💙</div>
+
+    <div class="subtitle">
+        این یک تبریک تولد برای دوست‌پسر وحشی من<br>
+        از سمت هدیه‌ات!
+    </div>
+
+    <div class="message">
+        خب جیگرم!<br>
+        یه سال دیگه هم گذشت و تو هنوز همون
+        موجود دوست‌داشتنی و دردسرساز منی!<br>
+        امیدوارم امسال پر از اتفاقای خفن،
+        خنده‌های بلند و آرزوهای برآورده‌شده باشه.<br>
+        <span>تولدت مبارک شیطون بلا!</span>
+    </div>
+
+    <button onclick="playVoice()">
+        🎧 صدای هدیه رو بشنو
+    </button>
+
+    <audio id="voice" src="voice.mp3"></audio>
+
+<br>
+
+    <button onclick="showSurprise()">
+        یه سورپرایز دیگه دارم برات ✨
+    </button>
+
+    <div id="surprise">
+        ❤️ دوست دارم، حتی وقتی رو مخمی!<br>
+        همیشه بخند، وحشی من.
+    </div>
+
+    <div class="footer">
+        MADE WITH LOVE BY <strong>HEDIEH</strong>
+        <br>
+        ONLY FOR YOU ♡
+    </div>
+
+</div>
+
+<script>
+function playVoice() {
+    const audio = document.getElementById("voice");
+
+    if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+}
+
+function showSurprise() {
+    const surprise = document.getElementById("surprise");
+    surprise.style.display = "block";
+}
+</script>
+
+</body>
+</html>
